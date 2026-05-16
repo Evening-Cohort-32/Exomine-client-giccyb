@@ -1,0 +1,23 @@
+---
+id: d026ffb0-1a11-4551-a894-0963ceb2c322
+---
+
+sequenceDiagram;
+
+
+participant user
+participant Button as purchaseButton
+participant TransientState
+participant API as JSON Server API
+participant DB as database.json
+
+
+
+
+    user->>+Button: Clicks purchase button
+    Button->>+TransientState: handlePurhcase()
+    TransientState->>TransientState: savePurchase()
+    TransientState->>API: PUT request with transient state
+    API->>DB: Save data to Database
+    API-->>TransientState: Return response (201 Created)
+ 
