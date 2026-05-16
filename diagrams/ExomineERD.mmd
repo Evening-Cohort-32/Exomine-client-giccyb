@@ -1,0 +1,48 @@
+---
+id: 6154180e-9b26-4b53-a3ec-133c23e6805a
+---
+erDiagram
+
+    COLONY ||--o{ GOVERNOR : has
+    COLONY ||--o{ COLONY_MINERAL : stores
+    MINERAL ||--o{ COLONY_MINERAL : included_in
+
+    FACILITY ||--o{ FACILITY_MINERAL : contains
+    MINERAL ||--o{ FACILITY_MINERAL : extracted_at
+
+    COLONY {
+        int id PK
+        string name
+    }
+
+    GOVERNOR {
+        int id PK
+        string name
+        boolean active
+        int colonyId FK
+    }
+
+    FACILITY {
+        int id PK
+        string name
+        boolean active
+    }
+
+    MINERAL {
+        int id PK
+        string name
+    }
+
+    FACILITY_MINERAL {
+        int id PK
+        int facilityId FK
+        int mineralId FK
+        int quantity
+    }
+
+    COLONY_MINERAL {
+        int id PK
+        int colonyId FK
+        int mineralId FK
+        int quantity
+    }
