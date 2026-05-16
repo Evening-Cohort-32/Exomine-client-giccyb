@@ -8,4 +8,9 @@ mineralShop.js-->purchasableMinerals.js
 mineralShop.js-->inventoryMinerals.js
 mineralShop.js-->cart.js
 mineralShop.js-->submitButton.js
+governors.js-->API
+facilities.js-->API
+purchasableMinerals.js-->API
+inventoryMinerals.js-->API
+cart.js-->API
 ```
