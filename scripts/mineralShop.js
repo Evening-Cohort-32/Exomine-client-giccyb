@@ -2,7 +2,7 @@
 //Creates HTML for the entire mineral shop webpage
 
 import { governorList } from "./governors.js";
-// import { coloniesList } from "./colonies.js";
+import { coloniesList } from "./colonies.js";
 // import { inventoryMinerals } from "./inventoryMinerals.js";
 // import { availableMinerals } from "./availableMinerals.js";
 // import { submitButton } from "./submitButton.js";
