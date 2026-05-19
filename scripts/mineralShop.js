@@ -2,7 +2,7 @@
 //Creates HTML for the entire mineral shop webpage
 
 import { governorList } from "./governors.js";
-import { coloniesList } from "./colonies.js";
+import { colonySelectHtml } from "./colonies.js";
 // import { inventoryMinerals } from "./inventoryMinerals.js";
 // import { availableMinerals } from "./availableMinerals.js";
 // import { submitButton } from "./submitButton.js";
@@ -17,7 +17,7 @@ export const mineralShop = async () => {
         
       </div>
       <div class="colony-display">
-        
+        ${await colonySelectHtml()}
       </div>
     </section>
 
