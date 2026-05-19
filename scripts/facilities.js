@@ -21,7 +21,7 @@ export const facilitySelectHtml = async () => {
 
   let html = `
     <label for="facilities">Choose a facility </label>
-    <select name="facilities" id="facilities">
+    <select name="facilities" id="facilities"><option value="0">Choose a facility...</option>
   `;
 
   const options = facilities.map(
