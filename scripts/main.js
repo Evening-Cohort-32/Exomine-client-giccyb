@@ -1,11 +1,14 @@
 //Invoke mineralShop function and display it's html in <main id="content">
 
+import { handleChoices } from "./changeListener.js";
 import { mineralShop } from "./mineralShop.js";
 
 const content = document.getElementById("content");
 
-const render = async () => {
+export const render = async () => {
   content.innerHTML = await mineralShop();
 };
+
+document.addEventListener("change", handleChoices);
 
 render();
