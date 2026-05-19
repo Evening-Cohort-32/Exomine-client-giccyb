@@ -28,4 +28,7 @@ export const colonyInventoryHtml = async (colonyId) => {
   return `<ul>${items.join('')}</ul>`
 }
 
+// Provide a backwards-compatible named export that earlier modules expect
+export const coloniesList = colonySelectHtml
+
 export default { getAllColonies, colonySelectHtml, colonyInventoryHtml }
