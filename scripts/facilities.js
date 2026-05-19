@@ -31,6 +31,6 @@ export const facilityInventoryHtml = async (colonyId) => {
 };
 
 // Provide a backwards-compatible named export that earlier modules expect
-export const coloniesList = colonySelectHtml;
+export const coloniesList = facilitySelectHtml;
 
 export default { getAllFacilities, facilitySelectHtml, facilityInventoryHtml };
