@@ -1,5 +1,5 @@
 //Invoke mineralShop function and display it's html in <main id="content">
-
+import { handleOrderSubmission } from "./submitButton.js";
 import { handleChoices } from "./changeListener.js";
 import { mineralShop } from "./mineralShop.js";
 
@@ -11,5 +11,6 @@ export const render = async () => {
 
 document.addEventListener("change", handleChoices);
 document.addEventListener("stateChanged", render);
+document.addEventListener("click", handleOrderSubmission);
 
 render();

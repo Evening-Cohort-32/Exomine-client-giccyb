@@ -6,7 +6,7 @@ import { facilitySelectHtml } from "./facilities.js";
 import { inventoryMinerals } from "./inventoryMinerals.js";
 import { getState } from "./TransientState.js";
 import { availableMinerals } from "./availableMinerals.js";
-// import { submitButton } from "./submitButton.js";
+import { submitButton } from "./submitButton.js";
 
 export const mineralShop = async () => {
   const state = getState();
@@ -32,7 +32,15 @@ export const mineralShop = async () => {
         ${await availableMinerals()}
       </div>
       <div class="cart-display">
-        
+
+        ${
+          state.selectedMineral
+            ? `
+          <h2>Space Cart</h2>
+          <p> 1 ton of selected mineral</p>
+          ${submitButton()}`
+            : "<h2>Space Cart</h2>"
+        }
       </div>
     </section>
 
