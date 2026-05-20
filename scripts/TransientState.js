@@ -15,6 +15,8 @@ export const setMineral = (mineralId) => {
   document.dispatchEvent(new CustomEvent("stateChanged"));
 };
 
+export const getState = () => structuredClone(state);
+
 // export const purchaseMineral = async () => {
 //   const response = await fetch("http://localhost:8088/governors");
 //   const governors = await response.json();

@@ -10,5 +10,6 @@ export const render = async () => {
 };
 
 document.addEventListener("change", handleChoices);
+document.addEventListener("stateChanged", render);
 
 render();
