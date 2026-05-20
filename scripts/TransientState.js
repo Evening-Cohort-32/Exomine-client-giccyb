@@ -17,6 +17,7 @@ export const setGovernor = (governorId) => {
 export const setMineral = (mineralId) => {
   state.selectedMineral = mineralId;
   document.dispatchEvent(new CustomEvent("stateChanged"));
+  console.log(state);
 };
 
 export const getState = () => structuredClone(state);
