@@ -29,7 +29,9 @@
     "facilityMinerals": [
         { "id": 1, "facilityId": 1, "mineralId": 1, "quantity": 20 },
         { "id": 2, "facilityId": 1, "mineralId": 2, "quantity": 15 },
-        { "id": 3, "facilityId": 2, "mineralId":3, "quantity": 10 }
+        { "id": 3, "facilityId": 2, "mineralId":3, "quantity": 10 },
+        { "id": 4, "facilityId": 4, "mineralId":3, "quantity": 10 }
+        
      
     ]
         ,

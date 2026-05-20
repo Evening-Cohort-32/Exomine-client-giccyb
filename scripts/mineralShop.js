@@ -5,7 +5,7 @@ import { governorList } from "./governors.js";
 import { facilitySelectHtml } from "./facilities.js";
 import { inventoryMinerals } from "./inventoryMinerals.js";
 import { getState } from "./TransientState.js";
-// import { availableMinerals } from "./availableMinerals.js";
+import { availableMinerals } from "./availableMinerals.js";
 // import { submitButton } from "./submitButton.js";
 
 export const mineralShop = async () => {
@@ -29,7 +29,7 @@ export const mineralShop = async () => {
 
 <section class="bottom-row">
       <div class="minerals-display">
-        
+        ${await availableMinerals()}
       </div>
       <div class="cart-display">
         
