@@ -1,10 +1,10 @@
-// Dropdown menu for colony/facility choices
+//Dropdown menu for colony/facility choices
 
 const clone = (v) => JSON.parse(JSON.stringify(v));
 
 export const getAllFacilities = async () => {
   try {
-    const resp = await fetch(`/api/facilities`);
+    const resp = await fetch("http://localhost:8088/facilities");
 
     if (resp.ok) {
       return await resp.json();
@@ -21,31 +21,34 @@ export const facilitySelectHtml = async () => {
 
   let html = `
     <label for="facilities">Choose a facility </label>
-    <select name="facilities" id="facilities">
-      <option value="0">Choose a facility...</option>
+    <select name="facilities" id="facilities"><option value="0">Choose a facility...</option>
   `;
 
-  const options = facilities.map((f) => `<option value="${f.id}">${f.name}</option>`);
+  const options = facilities.map(
+    (facility) => `<option value="${facility.id}">${facility.name}</option>`,
+  );
 
   html += options.join("");
-  html += `</select>`;
+  html += "</select>";
 
   return html;
 };
 
 export const facilityInventoryHtml = async (facilityId) => {
-  const resp = await fetch(`/api/facilities/${facilityId}`);
+  const resp = await fetch(`http://localhost:8088/facilities/${facilityId}`);
+
   if (!resp.ok) return "<ul></ul>";
+
   const facility = await resp.json();
 
   const items = Object.keys(facility.inventory || {}).map(
-    (name) => `<li>${name}: ${facility.inventory[name]}</li>`
+    (name) => `<li>${name}: ${facility.inventory[name]}</li>`,
   );
 
   return `<ul>${items.join("")}</ul>`;
 };
 
-// Provide a backwards-compatible named export that earlier modules expect
+// Backwards-compatible export
 export const facilitiesList = facilitySelectHtml;
 
 export default {
