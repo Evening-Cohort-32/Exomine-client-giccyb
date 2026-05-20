@@ -1,4 +1,8 @@
-const state = { selectedFacility: 0, selectedGovernor: 0, selectedMineral: 0 };
+export const state = {
+  selectedFacility: 0,
+  selectedGovernor: 0,
+  selectedMineral: 0,
+};
 
 export const setFacility = (facilityId) => {
   state.selectedFacility = facilityId;
