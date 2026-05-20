@@ -26,13 +26,15 @@ export const facilitySelectHtml = async () => {
     <select name="facilities" id="facilities"><option value="0">Choose a facility...</option>
   `;
 
-  const options = facilities.map((facility) => {
-    if (parseInt(state.selectedFacility) === parseInt(facility.id)) {
-      return `<option value="${facility.id}" selected>${facility.name}</option>`;
-    } else {
-      return `<option value="${facility.id}">${facility.name}</option>`;
-    }
-  });
+  const options = facilities
+    .filter((facility) => facility.active)
+    .map((facility) => {
+      if (parseInt(state.selectedFacility) === parseInt(facility.id)) {
+        return `<option value="${facility.id}" selected>${facility.name}</option>`;
+      } else {
+        return `<option value="${facility.id}">${facility.name}</option>`;
+      }
+    });
 
   html += options.join("");
   html += "</select>";
