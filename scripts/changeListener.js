@@ -6,6 +6,6 @@ export const handleChoices = (event) => {
   } else if (event.target.name === "facilities") {
     setFacility(parseInt(event.target.value));
   } else if (event.target.name === "minerals") {
-    setMineral(parsInt(event.target.value));
+    setMineral(parseInt(event.target.value));
   }
 };
