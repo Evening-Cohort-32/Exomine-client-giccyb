@@ -1,0 +1,142 @@
+/* Main layout for the Mineral Shop app */
+:root{
+	--bg:#0f1724;
+	--card:#0b1220;
+	--muted:#94a3b8;
+	--accent:#7dd3fc;
+	--accent-2:#60a5fa;
+	--surface:#0b1220;
+	--gap:16px;
+	--radius:8px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+	margin:0;
+	font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+	background:linear-gradient(180deg,#071025 0%, #081227 60%);
+	color:#e6eef8;
+	padding:24px;
+}
+
+h1{margin:0 0 20px 0;font-weight:600}
+
+/* Top row: selectors + display */
+.top-row{
+	display:flex;
+	gap:var(--gap);
+	align-items:flex-start;
+	margin-bottom:20px;
+}
+
+.selectors{
+	display:flex;
+	flex-direction:column;
+	gap:8px;
+	min-width:260px;
+	background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+	padding:12px;
+	border-radius:var(--radius);
+}
+
+.selectors label{font-size:14px;color:var(--muted);margin-bottom:6px}
+.selectors select{
+	width:100%;
+	padding:8px 10px;
+	border-radius:6px;
+	border:1px solid rgba(255,255,255,0.06);
+	background:transparent;
+	color:inherit;
+}
+
+.colony-display{
+	flex:1 1 auto;
+	background:var(--surface);
+	padding:12px;
+	border-radius:var(--radius);
+	min-height:120px;
+}
+
+.colony-display h2{margin-top:0;color:var(--accent)}
+
+/* Bottom row: minerals and cart */
+.bottom-row{
+	display:grid;
+	grid-template-columns: 1fr 320px;
+	gap:var(--gap);
+}
+
+.minerals-display{
+	background:var(--card);
+	padding:12px;
+	border-radius:var(--radius);
+	min-height:240px;
+}
+
+.cart-display{
+	background:var(--card);
+	padding:12px;
+	border-radius:var(--radius);
+	min-height:240px;
+}
+
+/* Generic lists and cards */
+ul{padding-left:18px;margin:0}
+li{margin:6px 0}
+
+.mineral-card{
+	display:flex;
+	justify-content:space-between;
+	align-items:center;
+	gap:12px;
+	background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);
+	padding:10px;
+	border-radius:6px;
+	margin-bottom:8px;
+}
+
+.mineral-card .price{color:var(--accent-2);font-weight:600}
+
+.btn{
+	display:inline-block;
+	padding:8px 12px;
+	border-radius:6px;
+	background:var(--accent);
+	color:#04263b;
+	font-weight:600;
+	border:none;
+	cursor:pointer;
+}
+
+/* Responsive */
+@media (max-width:880px){
+	.top-row{flex-direction:column}
+	.bottom-row{grid-template-columns:1fr}
+	.selectors{flex-direction:row;flex-wrap:wrap}
+}
+
+
+.selectors label{display:block;font-size:13px;margin-bottom:6px}
+.selectors select, .selectors input[type="radio"]{font-size:14px}
+
+
+.colony-display ul{margin:8px 0 0 18px}
+.colony-display li{padding:6px 0;border-bottom:1px dashed rgba(255,255,255,0.02)}
+
+
+.minerals-display h3{margin-top:0}
+.minerals-list{display:flex;flex-direction:column;gap:8px}
+.minerals-list .mineral-row{display:flex;align-items:center;justify-content:space-between;padding:8px;border-radius:6px;background:rgba(255,255,255,0.02)}
+.minerals-list input[type="radio"]{margin-right:8px}
+
+/* Cart and submit (submitButton.js) */
+.cart-display .cart-empty{color:var(--muted)}
+#submit-button{width:100%;margin-top:8px}
+
+/* Small utilities */
+.muted{color:var(--muted)}
+.accent{color:var(--accent)}
+.row{display:flex;gap:12px;align-items:center}
+
+
