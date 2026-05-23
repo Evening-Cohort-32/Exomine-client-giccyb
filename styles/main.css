@@ -116,3 +116,27 @@ li{margin:6px 0}
 	.selectors{flex-direction:row;flex-wrap:wrap}
 }
 
+
+.selectors label{display:block;font-size:13px;margin-bottom:6px}
+.selectors select, .selectors input[type="radio"]{font-size:14px}
+
+
+.colony-display ul{margin:8px 0 0 18px}
+.colony-display li{padding:6px 0;border-bottom:1px dashed rgba(255,255,255,0.02)}
+
+
+.minerals-display h3{margin-top:0}
+.minerals-list{display:flex;flex-direction:column;gap:8px}
+.minerals-list .mineral-row{display:flex;align-items:center;justify-content:space-between;padding:8px;border-radius:6px;background:rgba(255,255,255,0.02)}
+.minerals-list input[type="radio"]{margin-right:8px}
+
+/* Cart and submit (submitButton.js) */
+.cart-display .cart-empty{color:var(--muted)}
+#submit-button{width:100%;margin-top:8px}
+
+/* Small utilities */
+.muted{color:var(--muted)}
+.accent{color:var(--accent)}
+.row{display:flex;gap:12px;align-items:center}
+
+
