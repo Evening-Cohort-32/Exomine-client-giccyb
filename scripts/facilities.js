@@ -23,7 +23,7 @@ export const facilitySelectHtml = async () => {
 
   let html = `
     <label for="facilities">Choose a facility </label>
-    <select name="facilities" id="facilities"><option value="0">Choose a facility...</option>
+    <select name="facilities" id="facilities" ${state.selectedGovernor ? "" : "disabled"}><option value="0">Choose a facility...</option>
   `;
 
   const options = facilities
