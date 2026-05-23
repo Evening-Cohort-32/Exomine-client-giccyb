@@ -21,8 +21,15 @@ export const availableMinerals = async () => {
       parseInt(facilityId) === parseInt(facilityMineral.facilityId) &&
       facilityMineral.facility.active === true
     ) {
-      HTML += `<input type="radio" name="facilityMineral" value="${facilityMineral.mineralId}">${facilityMineral.quantity} tons of ${facilityMineral.mineral.name}</input>`;
+      if (
+        parseInt(state.selectedMineral) === parseInt(facilityMineral.mineralId)
+      ) {
+        HTML += `<input type="radio" name="minerals" value="${facilityMineral.mineralId}" checked />${facilityMineral.quantity} tons of ${facilityMineral.mineral.name}`;
+      } else {
+        HTML += `<input type="radio" name="minerals" value="${facilityMineral.mineralId}">${facilityMineral.quantity} tons of ${facilityMineral.mineral.name}</input>`;
+      }
     }
+    //   HTML += `<input type="radio" name="minerals" value="${facilityMineral.mineralId}">${facilityMineral.quantity} tons of ${facilityMineral.mineral.name}</input>`;
   }
   HTML += "</form>";
   return HTML;
