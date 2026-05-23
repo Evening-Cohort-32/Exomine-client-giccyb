@@ -94,13 +94,13 @@
       "id": 1,
       "facilityId": 1,
       "mineralId": 1,
-      "quantity": 19
+      "quantity": 18
     },
     {
       "id": 2,
       "facilityId": 1,
       "mineralId": 2,
-      "quantity": 15
+      "quantity": 14
     },
     {
       "id": 3,
@@ -114,13 +114,13 @@
       "id": 1,
       "colonyId": 1,
       "mineralId": 1,
-      "quantity": 3
+      "quantity": 4
     },
     {
       "id": 2,
       "colonyId": 1,
       "mineralId": 2,
-      "quantity": 4
+      "quantity": 5
     },
     {
       "id": 3,

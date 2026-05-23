@@ -1,5 +1,7 @@
 //This module handles the "Purchase" click
 //HTML for generating "Purchase Mineral" button
+
+//gets current app state
 import { getState } from "./TransientState.js";
 
 export const handleOrderSubmission = async (clickEvent) => {
@@ -16,7 +18,6 @@ export const handleOrderSubmission = async (clickEvent) => {
     );
     const facilityMinerals = await facilityMineralResp.json();
     const facilityMineral = facilityMinerals[0];
-
     if (!facilityMineral || facilityMineral.quantity <= 0) {
       return;
     }
@@ -37,10 +38,9 @@ export const handleOrderSubmission = async (clickEvent) => {
         }),
       },
     );
-
     if (colonyMineral) {
       await fetch(`http://localhost:8088/colonyMinerals/${colonyMineral.id}`, {
-        method: "PATCH",
+        method: "PATCH", //only updates part of the object
         headers: {
           "Content-Type": "application/json",
         },
