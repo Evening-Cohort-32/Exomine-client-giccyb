@@ -11,6 +11,14 @@ import { submitButton } from "./submitButton.js";
 export const mineralShop = async () => {
   const state = getState();
   return `
+
+  <header class="hero-header">
+		<img 
+			src="./images/planets-in-the-solar-system-displayed-in-order-png.webp"
+      alt="Solar System Planets"
+      class="hero-image"
+		/>
+
     <h1>Solar System Mining Market</h1>
 
     <section class="top-row">
